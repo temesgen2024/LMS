@@ -1,0 +1,153 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+/* For WebKit-based browsers (Chrome, Safari, Edge) */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+
+::-webkit-scrollbar{
+  width: 8px;
+}
+::-webkit-scrollbar-track{
+  background-color: #1771c6;
+}
+::-webkit-scrollbar-thumb{
+  background-color: #f5f5f5b0;
+}
+::-webkit-scrollbar-thumb:hover{
+  background-color: #32ae7e;
+}
+/* For Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+/* Additional specificity if needed */
+input[type="number"].no-spin::-webkit-inner-spin-button,
+input[type="number"].no-spin::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"].no-spin {
+  -moz-appearance: textfield;
+}
+
+
+body {
+  color: rgb(var(--foreground-rgb));
+  overflow-x: hidden;
+}
+
+.hero_animation {
+  background-image: linear-gradient(147.92deg, hsla(239,76%,53%,0.456) 10.41%, hsla(0,0% , 100%, 0) 89.25%);
+  animation: changeBackgroundColor  8s infinite alternate;
+}
+
+@keyframes changeBackgroundColor {
+  0% ,100%{
+    opacity: 1;
+  }
+  16.67%{
+    opacity: 0.9;
+  }
+  33.33%{
+    opacity: 0.8;
+  }
+  50%{
+    opacity: 0.6;
+  }
+  66.67%{
+    opacity: 0.5;
+  }
+  83.33%{
+    opacity: 0.4;
+  }
+}
+
+.first-color { 
+	background: #323643; 
+}
+	
+.second-color { 
+	background: #606470; 
+}
+
+.third-color { 
+	background: #93deff; 
+}
+
+.fourth-color { 
+	background: #f7f7f7; 
+}
+/* global.css */
+@keyframes shake {
+  0% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  50% { transform: translateX(5px); }
+  75% { transform: translateX(-5px); }
+  100% { transform: translateX(0); }
+}
+
+.shake {
+  animation: shake 0.5s ease-in-out;
+}
+
+.shake {
+  animation: shake 0.5s ease-in-out;
+}
+/* From Uiverse.io by satyamchaudharydev */ 
+.loader {
+  display: block;
+  --height-of-loader: 4px;
+  --loader-color: #0071e2;
+  width: 130px;
+  height: var(--height-of-loader);
+  border-radius: 30px;
+  background-color: rgba(0,0,0,0.2);
+  position: relative;
+}
+
+.loader::before {
+  content: "";
+  position: absolute;
+  background: var(--loader-color);
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 100%;
+  border-radius: 30px;
+  animation: moving 1s ease-in-out infinite;
+  ;
+}
+
+@keyframes moving {
+  50% {
+    width: 100%;
+  }
+
+  100% {
+    width: 0;
+    right: 0;
+    left: unset;
+  }
+}
